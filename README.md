@@ -22,7 +22,7 @@ Or pass the project path directly:
 ~/workspace/claude-java-container/start.sh ~/projects/my-java-app
 ```
 
-To start Claude automatically on container start:
+To start Claude automatically on container start (runs with `--dangerously-skip-permissions`):
 
 ```bash
 ~/workspace/claude-java-container/start.sh --start-claude
