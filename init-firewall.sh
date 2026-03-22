@@ -31,6 +31,13 @@ for domain in \
     "sentry.io" \
     "repo1.maven.org" \
     "repo.maven.apache.org" \
+    "search.maven.org" \
+    "mvnrepository.com" \
+    "stackoverflow.com" \
+    "baeldung.com" \
+    "docs.spring.io" \
+    "openjdk.org" \
+    "docs.oracle.com" \
     "downloads.claude.ai" \
     "storage.googleapis.com"; do
     echo "Resolving $domain..."

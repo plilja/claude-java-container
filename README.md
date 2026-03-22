@@ -22,22 +22,10 @@ Or pass the project path directly:
 ~/workspace/claude-java-container/start.sh ~/projects/my-java-app
 ```
 
-To start Claude automatically on container start (runs with `--dangerously-skip-permissions`):
-
-```bash
-~/workspace/claude-java-container/start.sh --start-claude
-```
-
 To rebuild the image:
 
 ```bash
 ~/workspace/claude-java-container/start.sh --rebuild
-```
-
-Flags can be combined:
-
-```bash
-~/workspace/claude-java-container/start.sh --rebuild --start-claude ~/projects/my-java-app
 ```
 
 ## What's included
@@ -64,12 +52,12 @@ The container starts with an iptables firewall that blocks all outbound traffic 
 
 To allow additional domains, add them to `init-firewall.sh` and rebuild with `--rebuild`.
 
-## Running Claude without permission prompts
+## Running Claude
 
-Once inside the container, the firewall provides enough isolation to safely run Claude without per-command confirmations:
+Once inside the container, start Claude with:
 
 ```bash
-claude --dangerously-skip-permissions
+claude
 ```
 
-This is what `--start-claude` does automatically.
+Common commands like `mvn`, `gradle`, `java`, `javac`, `find`, `grep`, and web fetches are pre-approved via managed settings baked into the image. Git commits and pushes will still prompt for confirmation.

@@ -35,8 +35,12 @@ RUN curl -fsSL https://claude.ai/install.sh | bash
 
 ENV PATH="/home/dev/.local/bin:${PATH}"
 
-# Copy and set up firewall script and entrypoint
+# Bake managed settings into the image
 USER root
+RUN mkdir -p /etc/claude-code
+COPY managed-settings.json /etc/claude-code/managed-settings.json
+
+# Copy and set up firewall script and entrypoint
 COPY init-firewall.sh /usr/local/bin/init-firewall.sh
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/init-firewall.sh /usr/local/bin/entrypoint.sh && \
