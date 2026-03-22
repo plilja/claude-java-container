@@ -8,6 +8,7 @@
       "Bash(gradle *)",
       "Bash(./gradlew *)",
       "Bash(python3 *)",
+      "Bash(jq *)",
       "Bash(find *)",
       "Bash(cat *)",
       "Bash(grep *)",
