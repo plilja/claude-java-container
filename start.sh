@@ -17,7 +17,7 @@ CMD="bash"
 $START_CLAUDE && CMD="claude --dangerously-skip-permissions"
 
 podman run -it --rm \
-    --name claude-java \
+    --name "claude-java-$$" \
     --cap-add=NET_ADMIN \
     --userns=keep-id \
     -v "${1:-$(pwd)}:/workspace:z" \
