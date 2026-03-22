@@ -21,5 +21,6 @@ podman run -it --rm \
     -v "$HOME/.claude:/home/dev/.claude:z" \
     -v "$HOME/.claude.json:/home/dev/.claude.json:z" \
     -v "$HOME/.gitconfig:/home/dev/.gitconfig:ro,z" \
+    -v "$HOME/.ssh:/home/dev/.ssh:ro,z" \
     ${GH_TOKEN:+-e GH_TOKEN="$GH_TOKEN"} \
     "$IMAGE_NAME"
