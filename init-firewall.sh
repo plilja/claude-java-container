@@ -32,6 +32,7 @@ for domain in \
     "repo1.maven.org" \
     "repo.maven.apache.org" \
     "search.maven.org" \
+    "central.sonatype.com" \
     "mvnrepository.com" \
     "stackoverflow.com" \
     "baeldung.com" \
