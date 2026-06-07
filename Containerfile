@@ -21,6 +21,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 ENV DEVCONTAINER=true
 
+# Install mvnd (Maven Daemon)
+ARG MVND_VERSION=1.0.2
+RUN curl -fsSL -o /tmp/mvnd.tar.gz \
+        "https://github.com/apache/maven-mvnd/releases/download/${MVND_VERSION}/maven-mvnd-${MVND_VERSION}-linux-amd64.tar.gz" && \
+    tar -xzf /tmp/mvnd.tar.gz -C /opt && \
+    ln -s "/opt/maven-mvnd-${MVND_VERSION}-linux-amd64/bin/mvnd" /usr/local/bin/mvnd && \
+    rm /tmp/mvnd.tar.gz
+
 ARG USERNAME=dev
 
 # Create non-root user
